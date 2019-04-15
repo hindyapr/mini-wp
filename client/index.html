@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="/css/vueWysiwyg.css">
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+
+    <script src="//unpkg.com/@babel/polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div id="newAr" v-if="form">
+            <form method="post" v-on:submit.prevent="">
+
+                <h2 v-if="newArticle"> Create Article </h2>
+                <h2 v-if="editDraft"> Edit Draft Article </h2>
+                <h2 v-if="editPublish"> Edit Published Article </h2>
+
+                <div>
+                    <label for="title">Title :</label>
+                    <input type="text" id="title" v-model="title" />
+                </div>
+                <div>
+                    <label for="content">Content :</label>
+                    <wysiwyg id="content" class="board-text" v-model="content"></wysiwyg>
+
+                </div>
+
+
+
+                <div class="button" v-if="newArticle">
+                    <button type="submit" v-on:click.prevent="publish(true)"> Publish </button>
+                    <button type="submit" v-on:click.prevent="publish(false)"> Save to draft </button>
+                    <button type="button" v-on:click.prevent="closeRegistForm"> Close </button>
+                </div>
+
+                <div class="button" v-if="editDraft">
+                    <button type="submit" v-on:click.prevent="publishFromDraft(true)"> Publish </button>
+                    <button type="submit" v-on:click.prevent="publishFromDraft(false)"> Save change </button>
+                    <button type="button" v-on:click.prevent="closeRegistForm"> Close </button>
+                </div>
+
+                <div class="button" v-if="editPublish">
+                    <button type="submit" v-on:click.prevent="saveEditedPublish"> Save change </button>
+                    <button type="button" v-on:click.prevent="closeRegistForm"> Close </button>
+                </div>
+
+
+            </form>
+
+
+        </div> -->
+
+        <navbar-comp class='fix-head' v-bind:log-status="logStatus" v-on:log-out="logStatus = false" v-on:regist-form="registForm = true" v-on:login-form="loginForm = true" v-on:article-form="form = true"></navbar-comp>
+        <b-modal v-model='form' title="Write your article" size="xl">
+            <b-container fluid>
+                <b-form-group label="Title:">
+                    <b-form-input v-model="title" type="text" required placeholder="Title"></b-form-input>
+                </b-form-group>
+
+                <b-form-group label="Featured Image:">
+                    <input v-model="image" type="file" placeholder="Title"></b-form-input>
+                </b-form-group>
+
+                <b-form-group label="Content:">
+                    <wysiwyg class="board-text" v-model="content"></wysiwyg>
+                </b-form-group>
+            </b-container>
+
+            <div slot="modal-footer" class="w-100">
+                <b-row align-h="center" v-if="newArticle">
+                    <b-button v-on:click="publish(true)" variant="dark" size="lg" align-self="center" @click="show=false">
+                        PUBLISH
+                    </b-button>
+                    <b-button v-on:click="publish(false)" variant="dark" size="lg" align-self="center" @click="show=false">
+                        SAVE TO DRAFT
+                    </b-button>
+                </b-row>
+                <b-row align-h="center" v-if="editDraft">
+                    <b-button v-on:click="publishFromDraft" variant="dark" size="lg" align-self="center" @click="show=false">
+                        PUBLISH
+                    </b-button>
+                    <b-button v-on:click="publish(false)" variant="dark" size="lg" align-self="center" @click="show=false">
+                        SAVE CHANGE
+                    </b-button>
+                </b-row>
+                <b-row align-h="center" v-if="editDraft">
+                    <b-button v-on:click="publish(true)" variant="dark" size="lg" align-self="center" @click="show=false">
+                        SAVE CHANGE
+                    </b-button>
+                    <b-button v-on:click="publish(false)" variant="dark" size="lg" align-self="center" @click="show=false">
+                        SAVE TO DRAFT
+                    </b-button>
+                </b-row>
+            </div>
+        </b-modal>
+
+        <b-modal v-model='registForm' title="Register">
+            <b-container fluid>
+                <b-form-group label="Email:" description="We'll never share your email with anyone else.">
+                    <b-form-input v-model="emailRegist" type="email" required placeholder="Enter email"></b-form-input>
+                </b-form-group>
+
+                <b-form-group label="Username:">
+                    <b-form-input v-model="usernameRegist" required placeholder="Enter username"></b-form-input>
+                </b-form-group>
+
+                <b-form-group label="Password:" l>
+                    <b-form-input v-model="passRegist" type="password" required placeholder="Enter password"></b-form-input>
+                </b-form-group>
+            </b-container>
+
+            <div slot="modal-footer" class="w-100">
+                <b-row align-h="center">
+                    <b-button variant="dark" v-on:click="registerForm = false;" size="lg" align-self="center" @click="show=false">
+                        REGISTER
+                    </b-button>
+                </b-row>
+            </div>
+        </b-modal>
+
+        <b-modal v-model='loginForm' title="Login">
+            <b-container fluid>
+                <b-form-group label="Email:" description="We'll never share your email with anyone else.">
+                    <b-form-input v-model="emailLogin" type="email" required placeholder="Enter email"></b-form-input>
+                </b-form-group>
+
+                <b-form-group label="Password:">
+                    <b-form-input v-model="passLogin" type="password" required placeholder="Enter password"></b-form-input>
+                </b-form-group>
+            </b-container>
+
+            <div slot="modal-footer" class="w-100">
+                <b-row align-h="center">
+                    <b-button v-on:click="logStatus = true; loginForm = false;" variant="dark" size="lg" align-self="center" @click="show=false">
+                        LOGIN
+                    </b-button>
+                </b-row>
+            </div>
+        </b-modal>
+
+
+        <b-container id="published-articles" style="margin-top: 96px">
+            <b-row align-h="center" fluid>
+                <div style=" width: 100%" v-for="(article, index) in published">
+                    <published-article v-bind:article="article"></published-article>
+                </div>
+            </b-row>
+        </b-container>
+
+        <b-container id="dashboard" style="margin-top: 96px"></b-container>
+
+        <!-- <div class="container flexing">
+            <div class="content border-one ">
+                <div class="cat-div flexing">
+                    <div class="left flexing">
+                        <div class="published block-cat" v-on:click="onPublished"><a href="#">PUBLISHED</a></div>
+                        <div class="draft block-cat" v-on:click="onDraft"><a href="#">DRAFTS</a></div>
+                    </div>
+                    <div class="search-box flexing">
+                        <i class="fas fa-search" v-on:click="searching"></i>
+                        <input id="searchTXT" type="text" v-model="searchText" placeholder="Search here..." v-if="openSearch">
+                    </div>
+                </div>
+                <div class="post-list">
+                    <div class="post-container flexing  border-one" v-if="isPublished" v-for="(article, index) in published">
+                        <div class="title-detailed">
+                            <h2>{{article.title}}</h2>
+                            <h5>Created at {{article.createdAt}}</h5>
+                        </div>
+                        <img src="" alt="">
+                        <div class="edit-btn">
+                            <button class="btn-edt" type="button" v-on:click.prevent="openEditPostForm(article.id)"> edit </button>
+                            <button class="btn-dlt" type="button" v-on:click.prevent="deletePost(article.id)"> delete </button>
+                        </div>
+                    </div>
+                    <div class="post-container flexing  border-one" v-if="isDraft" v-for="(draft, index) in drafts">
+                        <div class="title-detailed">
+                            <h2>{{draft.title}}</h2>
+                            <h5>Created at {{draft.createdAt}}</h5>
+                        </div>
+                        <img src="" alt="">
+                        <div class="edit-btn">
+                            <button class="btn-edt" type="button" v-on:click.prevent="openEditDraftForm(draft.id)"> edit </button>
+                            <button class="btn-dlt" type="button" v-on:click.prevent="deleteDraft(draft.id)"> delete </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+
+    </div>
+
+    <script src="./js/components/published-article.js"></script>
+    <script src="./js/components/navbar.js"></script>
+    <script src="/js/vueWysiwyg.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

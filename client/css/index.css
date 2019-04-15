@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+i {
+    color: whitesmoke;
+}
+
+.fix-head {
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+    width: 100%;
+}
+
+.head-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-item {
+    margin: auto 4px;
+}

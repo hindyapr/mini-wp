@@ -1,0 +1,81 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "first",
+      "content": "first",
+      "publishStatus": true,
+      "createdAt": "12/03/2019",
+      "publishedAt": "12/03/2019",
+      "updatedAt": "12/03/2019"
+    },
+    {
+      "title": "second",
+      "content": "second",
+      "publishStatus": true,
+      "createdAt": "2019-04-10T07:58:07.745Z",
+      "publishedAt": "2019-04-10T07:58:07.745Z",
+      "updatedAt": "2019-04-10T07:58:07.745Z",
+      "id": 2
+    },
+    {
+      "title": "third",
+      "content": "third",
+      "publishStatus": true,
+      "createdAt": "2019-04-10T07:58:21.691Z",
+      "publishedAt": "2019-04-10T07:58:21.691Z",
+      "updatedAt": "2019-04-10T07:58:21.691Z",
+      "id": 3
+    },
+    {
+      "title": "fifth",
+      "content": "mau bikin fifth juga tapi belom jadi juga",
+      "publishStatus": false,
+      "createdAt": "2019-04-10T07:59:20.068Z",
+      "updatedAt": "2019-04-10T07:59:20.068Z",
+      "id": 5
+    },
+    {
+      "title": "testing345",
+      "content": "jnvjfnkv dv sdvh bkdb jksdvnjd dlbkdnlhndkjvd kjnksnkf msknksm&nbsp;",
+      "publishStatus": true,
+      "createdAt": "2019-04-10T11:54:31.622Z",
+      "publishedAt": "2019-04-10T11:54:31.622Z",
+      "updatedAt": "2019-04-10T11:54:31.622Z",
+      "id": 6
+    },
+    {
+      "title": "testing 5",
+      "content": " apapun maunya apa aja",
+      "publishStatus": "true",
+      "createdAt": "2019-04-10T11:54:52.275Z",
+      "updatedAt": "12/12/2019",
+      "id": 7,
+      "publishAt": "12/12/2019"
+    },
+    {
+      "title": "nyoba",
+      "content": "testing maunya di masukin draft tapi coba masuk mana",
+      "publishStatus": false,
+      "createdAt": "2019-04-11T06:06:35.001Z",
+      "updatedAt": "2019-04-11T06:06:35.001Z",
+      "id": 8
+    },
+    {
+      "title": "tenth",
+      "content": "gatau lagi bahkan nulis mau aja ga bisa bisa tau deh gimana lagi mana bodo amat gimana caranay nulis cepet bahkan",
+      "publishStatus": false,
+      "createdAt": "2019-04-11T06:09:20.388Z",
+      "updatedAt": "2019-04-11T06:09:20.388Z",
+      "id": 9
+    },
+    {
+      "title": "eleventh",
+      "content": "katanya mau masukin data tapi ga bisa bisa gimana dah gatau lagi apa yang mau ditulis",
+      "publishStatus": false,
+      "createdAt": "2019-04-11T06:10:22.699Z",
+      "updatedAt": "2019-04-11T06:10:22.699Z",
+      "id": 10
+    }
+  ]
+}

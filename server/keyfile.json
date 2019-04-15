@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "apt-octagon-237610",
+  "private_key_id": "38f244b430a60bfc55e6491a7c3f95be478dcd67",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCgf2zyrDriT5Nu\nfbATMQDpWPNbKB855qZ7Ud1HvrBMBclLIbXPx8Ts73+kTVt9TjWoBFVm4qLav2Xq\nwJm/eCyKkrfevYhAtIaOkwbPNJWqe1iPLVBHYy8pscx63cUtTyHN+Hp5Mj+W13Fr\nLgqrHI5QoWKNb85u1TLIjIQ4RctmKppZo1Jgsi9658rr+MhHLu4o2nHo/7DY0c7h\nlvV/H8etc8zKpr4W+k9lafw1sFNLW1svQWZTVsD/s2tQP86qj86HA4cof8xc5RUe\nx0bPG8rNlnrsdXUk7qXTK3lvBGbL3Jjfz9OgbmVLZgApDgsCu2Qfryy5fK9AEIJ4\n+MWoX4C7AgMBAAECggEAFONwuQa8ZS7pJ8S48U576WLXzWHj6oO/4CXv8EH7rPFF\n2P7qrD+6PAIRsT8WLLFMn3Ds8oaFnoWxjIODnx1TYreksZsmTBGSv6SYCsizv+vs\nwzmpDJl2jm0jCUyquHJnmmh//B0TlJy2mLX10n5VcV4HtxO5oMgjo2FSZgaDaejl\nrCS8l/dxTmx5uzplOWbMuPzzPjfClh8DRH/jtzw1JorflY5XlLEEeeaHOBZoTe4u\n3CAj8fedflfPIxRDKObHz1zXKPghLbAMQb7HForta3NQTjqFGedIPRznj5hxRT7s\nHIGVzhbInEruBVwKnBrZuHLIn8Ale/Q4whhCg4uORQKBgQDYg9LntcO8A+u+lNjN\nl1mcOQMr1CHBhslAv+g+oRtG0zwUUuddMPZnBa45/OpzYOEOW4IR/33e41FxaAs6\nWNv4g7k1LlTPK3vuZaiavYzX4JLYCbTijMBTvkjv50YSmNd8vwdCgv5nBuJ0a2Sv\nkn6cIEieVKrfOzMjvxOpA2LsdQKBgQC9xGTfCfP69vQet6yrO3SNiPbqgV2Wi0vR\nmfyfc/edsBfP/EY5mEcDSJPxNFPAa/D29tz3MUUVQU4jTIshjsRG61XFCiQzmRIN\nxetmLC4NMPkE0YecthfGt5VtaFlpn47Uvj5JD/lIrwulyKy0YQWToVK+wnBC/2Vm\nVw9eHBfSbwKBgAjfrj8s5e7Iwlq3QwN6FoQemhCryw5hddIfi2c1tyZ59dZnZ3Ac\nV5z1UKSzxvAfolmySmxuajw+WNIrD3q+tZVD4M1bLsKm55dntzdQWXtnit0r2KwI\nVMGZ5OdgNTEB7qMAOU3yjHawg4t980x21pWThSZoFfC8PmZSqH2e0+kZAoGBAIra\ns7yH+eB+5u27FDtPC9+sgo/hDOvlDRtXg4PhRSQ6/5GOVIw8ImoCp03tLgM0eGMd\nC15MzPHakSQ/E+cAIhqKhH3jB85BiPZPBgoC9cdtOCkQcBx5GTisiEg//HzO5aJB\nei3X5F4Mx4cNKWHrRDtb5cHzYFWFr1qNBY+lGsE9AoGAHCon8QFRvpW7FrV44C23\nXyOk90eZ+OYezPBN2muhv8UAr6qfhfHj/sOixTpKyHs3nu8DcqLEh60oNh/r6uWe\n3+U73WABGCu493QsWA3Wvy+JTbefe3A32Uae2tYw3/Rjtj16LoXxFVEhpyLsNDw8\nqX/gEssd77PclAnNd74zbbE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "databaseminiwp@apt-octagon-237610.iam.gserviceaccount.com",
+  "client_id": "101304756448070873335",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/databaseminiwp%40apt-octagon-237610.iam.gserviceaccount.com"
+}
